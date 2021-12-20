@@ -13,10 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sfg.geocomply.GetPageTitleFromUrl;
-import com.sfg.geocomply.GetPageTitleFromUrlImpl;
-import com.sfg.geocomply.NetService;
-import com.sfg.geocomply.NetServiceImpl;
+import com.sfg.geocomply.domain.GetPageTitleFromUrl;
+import com.sfg.geocomply.domain.GetPageTitleFromUrlImpl;
+import com.sfg.geocomply.data.NetService;
+import com.sfg.geocomply.data.NetServiceImpl;
 import com.sfg.geocomply.R;
 import com.sfg.geocomply.databinding.MainFragmentBinding;
 

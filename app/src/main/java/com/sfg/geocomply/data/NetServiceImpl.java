@@ -1,4 +1,4 @@
-package com.sfg.geocomply;
+package com.sfg.geocomply.data;
 
 import org.jsoup.Jsoup;
 

@@ -1,4 +1,4 @@
-package com.sfg.geocomply;
+package com.sfg.geocomply.domain;
 
 import com.sfg.geocomply.ui.main.model.Link;
 

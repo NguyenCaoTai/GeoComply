@@ -1,4 +1,4 @@
-package com.sfg.geocomply;
+package com.sfg.geocomply.util;
 
 import org.json.JSONException;
 import org.json.JSONObject;

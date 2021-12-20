@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sfg.geocomply.GetPageTitleFromUrl;
-import com.sfg.geocomply.Utils;
+import com.sfg.geocomply.domain.GetPageTitleFromUrl;
+import com.sfg.geocomply.util.Utils;
 import com.sfg.geocomply.ui.main.model.Link;
 import com.sfg.geocomply.ui.main.model.LinkGroup;
 import com.sfg.geocomply.ui.main.model.Mention;
