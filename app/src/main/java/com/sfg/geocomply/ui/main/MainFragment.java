@@ -1,5 +1,6 @@
 package com.sfg.geocomply.ui.main;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -12,11 +13,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sfg.geocomply.GetPageTitleFromUrl;
+import com.sfg.geocomply.GetPageTitleFromUrlImpl;
+import com.sfg.geocomply.NetService;
+import com.sfg.geocomply.NetServiceImpl;
 import com.sfg.geocomply.R;
+import com.sfg.geocomply.databinding.MainFragmentBinding;
 
 public class MainFragment extends Fragment {
 
-    private MainViewModel mViewModel;
+    private MainFragmentBinding binding;
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -26,14 +32,27 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.main_fragment, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false);
+        binding.setLifecycleOwner(this);
+
+        return binding.getRoot();
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        // TODO: Use the ViewModel
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        MainViewModel mViewModel = new ViewModelProvider(this, getMainViewModelFactory())
+                .get(MainViewModel.class);
+
+        binding.setViewModel(mViewModel);
+    }
+
+    private MainViewModel.MainViewModelFactory getMainViewModelFactory(){
+        NetService netService = new NetServiceImpl();
+        GetPageTitleFromUrl getPageTitleFromUrl = new GetPageTitleFromUrlImpl(netService);
+
+        return new MainViewModel.MainViewModelFactory(getPageTitleFromUrl);
     }
 
 }

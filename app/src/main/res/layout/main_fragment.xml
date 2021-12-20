@@ -14,6 +14,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/default_padding"
         tools:context=".ui.main.MainFragment">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -29,7 +30,6 @@
                 android:layout_margin="@dimen/card_margin"
                 android:background="@color/cardview_dark_background"
                 android:gravity="top|start"
-                android:hint="@string/hint_comment_here"
                 android:lines="7"
                 android:maxLines="7"
                 android:text="@={viewModel.comment}"
@@ -76,8 +76,8 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            style="@style/CardView.Dark"
             android:id="@+id/link_area"
+            style="@style/CardView.Dark"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="@dimen/card_margin"
