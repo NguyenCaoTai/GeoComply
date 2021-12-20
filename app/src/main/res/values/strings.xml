@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GeoComply</string>
+    <string name="hint_comment_here">Comment here</string>
+    <string name="label_json_response">JSON response</string>
+    <string name="label_link">Link</string>
+    <string name="label_mention">Mention</string>
+    <string name="hint_link_response_is_here">Link response is here</string>
+    <string name="hint_mention_response_is_here">Mention response is here</string>
 </resources>
